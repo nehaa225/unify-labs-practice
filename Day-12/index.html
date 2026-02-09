@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semantic HTML & Advanced CSS Demo</title>
+
+  <!-- Linked stylesheet (href = linking) -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Semantic Navigation -->
+  <nav class="navbar">
+    <a href="#architecture">Architecture</a>
+    <a href="#css">CSS Logic</a>
+    <a href="#layout">Layouts</a>
+    <a href="#performance">Performance</a>
+  </nav>
+
+  <main>
+
+    <!-- Page identity (single H1) -->
+    <header class="hero">
+      <h1>Mastering HTML5 & Modern CSS</h1>
+      <p>Semantic structure, layout logic, and performance-first design</p>
+    </header>
+
+    <!-- Article Section -->
+    <section id="architecture">
+      <article>
+        <h2>🏛️ Semantic HTML5 Architecture</h2>
+
+        <!-- Embedded content (src = embedding) -->
+        <img src="architecture.png" alt="Diagram showing semantic HTML structure" />
+
+        <p>
+          Semantic tags like <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, and
+          <code>&lt;footer&gt;</code> improve accessibility and SEO by giving meaning
+          to page structure.
+        </p>
+      </article>
+    </section>
+
+    <!-- CSS Logic Section -->
+    <section id="css">
+      <article>
+        <h2>⚖️ CSS Specificity & Box Model</h2>
+        <div class="card highlight">
+          <p>
+            This card demonstrates CSS specificity and
+            <strong>border-box</strong> sizing.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Layout Section -->
+    <section id="layout">
+      <h2>🧱 Flexbox vs Grid</h2>
+
+      <!-- Flexbox -->
+      <div class="flex-demo">
+        <button>Home</button>
+        <button>About</button>
+        <button>Contact</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid-demo">
+        <div class="grid-item">Card 1</div>
+        <div class="grid-item">Card 2</div>
+        <div class="grid-item">Card 3</div>
+      </div>
+    </section>
+
+    <!-- Performance Section -->
+    <section id="performance">
+      <article>
+        <h2>📱 Performance & Optimization</h2>
+        <button class="animate-btn">Hover Me</button>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Semantic Footer -->
+  <footer>
+    <p>© 2026 Modern Web Engineering</p>
+  </footer>
+
+</body>
+</html>
