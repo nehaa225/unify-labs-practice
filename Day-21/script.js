@@ -1,15 +1,57 @@
 "use strict";
 
-import { saveSettings, loadSettings, resetSettings } from "./settings.js";
+
+// SAFE STORAGE OBJECT
+
+let storage = {};
 
 
-const toggle = document.getElementById("themeToggle");
-const font = document.getElementById("fontSize");
-const lang = document.getElementById("language");
-const reset = document.getElementById("resetBtn");
+// SAVE FUNCTION
+
+function saveSettings(data){
+
+storage = data;
+
+}
 
 
-// Text Data
+
+// LOAD FUNCTION
+
+function loadSettings(){
+
+return storage.theme ? storage : {
+
+theme: "light",
+fontSize: "20",
+language: "en"
+
+};
+
+}
+
+
+
+// RESET
+
+function resetSettings(){
+
+storage = {
+
+theme: "light",
+fontSize: "20",
+language: "en"
+
+};
+
+applyAll();
+
+}
+
+
+
+
+// TEXT DATA
 
 const text = {
 
@@ -47,147 +89,108 @@ reset: "రీసెట్ సెట్టింగ్స్"
 
 
 
-// Load Settings
+
+// ELEMENTS
+
+const toggle = document.getElementById("themeToggle");
+
+const font = document.getElementById("fontSize");
+
+const lang = document.getElementById("language");
+
+const resetBtn = document.getElementById("resetBtn");
+
+
+
+// SETTINGS
 
 let settings = loadSettings();
 
 
 
-// Apply All
 
-applyTheme(settings.theme);
-applyFont(settings.fontSize);
-applyLanguage(settings.language);
+// APPLY ALL
 
-
-
-// Sync UI
-
-toggle.checked = settings.theme === "dark";
-font.value = settings.fontSize;
-lang.value = settings.language;
+applyAll();
 
 
 
-// Theme Change
+
+// EVENTS
+
 
 toggle.addEventListener("change", () => {
 
 settings.theme = toggle.checked ? "dark" : "light";
 
-applyTheme(settings.theme);
-
 saveSettings(settings);
+
+applyAll();
 
 });
 
 
-
-// Font Change
 
 font.addEventListener("change", () => {
 
 settings.fontSize = font.value;
 
-applyFont(settings.fontSize);
-
 saveSettings(settings);
+
+applyAll();
 
 });
 
 
-
-// Language Change
 
 lang.addEventListener("change", () => {
 
 settings.language = lang.value;
 
-applyLanguage(settings.language);
-
 saveSettings(settings);
 
-});
-
-
-
-// Reset
-
-reset.addEventListener("click", () => {
-
-resetSettings();
-
-location.reload();
+applyAll();
 
 });
 
 
 
-
-// Functions
-
-
-function applyTheme(theme){
-
-document.body.className = theme;
-
-}
+resetBtn.addEventListener("click", resetSettings);
 
 
 
-function applyFont(size){
 
-document.body.style.fontSize = size + "px";
+// APPLY FUNCTION
 
-}
+function applyAll(){
 
+document.body.className = settings.theme;
 
-
-function applyLanguage(language){
-
-document.getElementById("title").innerText = text[language].title;
-
-document.getElementById("themeText").innerText = text[language].theme;
-
-document.getElementById("fontText").innerText = text[language].font;
-
-document.getElementById("langText").innerText = text[language].lang;
-
-document.getElementById("resetBtn").innerText = text[language].reset;
-
-}
-
-"use strict";
-
-const KEY = "dashboardSettings";
+document.body.style.fontSize = settings.fontSize + "px";
 
 
-export function saveSettings(data){
+toggle.checked = settings.theme === "dark";
 
-localStorage.setItem(KEY, JSON.stringify(data));
+font.value = settings.fontSize;
 
-}
-
-
-export function loadSettings(){
-
-const data = localStorage.getItem(KEY);
-
-return data ? JSON.parse(data) :
-
-{
-
-theme: "light",
-fontSize: "16",
-language: "en"
-
-};
-
-}
+lang.value = settings.language;
 
 
-export function resetSettings(){
+// language text
 
-localStorage.removeItem(KEY);
+document.getElementById("title").innerText =
+text[settings.language].title;
+
+document.getElementById("themeText").innerText =
+text[settings.language].theme;
+
+document.getElementById("fontText").innerText =
+text[settings.language].font;
+
+document.getElementById("langText").innerText =
+text[settings.language].lang;
+
+document.getElementById("resetBtn").innerText =
+text[settings.language].reset;
 
 }
