@@ -1,0 +1,72 @@
+body{
+
+font-family: Arial;
+padding:20px;
+background:#f4f4f4;
+
+}
+
+.dark{
+
+background:#111;
+color:white;
+
+}
+
+header{
+
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+
+}
+
+.container{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+margin-top:20px;
+
+}
+
+.card{
+
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+
+}
+
+.dark .card{
+
+background:#333;
+color:white;
+
+}
+
+button{
+
+cursor:pointer;
+padding:5px;
+
+}
+
+.loader{
+
+border:5px solid #eee;
+border-top:5px solid blue;
+border-radius:50%;
+width:40px;
+height:40px;
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+0%{transform:rotate(0);}
+100%{transform:rotate(360deg);}
+
+}
