@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Settings Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="title">⚙️ Settings Dashboard</h1>
+
+
+<!-- Theme -->
+
+<div class="box">
+
+<label id="themeText">🌙 Dark Mode</label>
+
+<label class="switch">
+<input type="checkbox" id="themeToggle">
+<span class="slider"></span>
+</label>
+
+</div>
+
+
+<!-- Font Size -->
+
+<div class="box">
+
+<label id="fontText">🔠 Font Size</label>
+
+<select id="fontSize">
+
+<option value="16">Small</option>
+<option value="20">Medium</option>
+<option value="24">Large</option>
+
+</select>
+
+</div>
+
+
+<!-- Language -->
+
+<div class="box">
+
+<label id="langText">🌐 Language</label>
+
+<select id="language">
+
+<option value="en">English</option>
+<option value="hi">Hindi</option>
+<option value="te">Telugu</option>
+
+</select>
+
+</div>
+
+
+<button id="resetBtn">Reset Settings</button>
+
+
+</div>
+
+<script type="module" src="main.js"></script>
+
+</body>
+</html>
