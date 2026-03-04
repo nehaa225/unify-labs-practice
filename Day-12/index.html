@@ -1,11 +1,61 @@
-<!-- 
-  DAY 12 PRACTICE LAB
-  Practice the concepts from today's video lecture below.
--->
-<div id="root">
-    <div class="lab-container">
-        <h1>Lab <span>Session</span> {{ selectedDay }}</h1>
-        <p>Console is active. Use the <strong>JS Tab</strong> to practice logic.</p>
-        <div id="display" class="debug-panel">Waiting for JS input...</div>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semantic Audit Project</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- Sticky Header -->
+    <header class="header">
+        <h1>Accessibility & Performance Demo</h1>
+
+        <!-- Icon-only button with ARIA label -->
+        <button class="icon-btn" aria-label="Open navigation menu">
+            ☰
+        </button>
+    </header>
+
+    <main>
+
+        <!-- Section 1 -->
+        <section>
+            <h2>About This Project</h2>
+            <p>
+                This page demonstrates semantic structure, accessibility improvements,
+                and performance optimizations using modern CSS techniques.
+            </p>
+
+            <!-- Image with meaningful alt -->
+            <img src="https://via.placeholder.com/600x300"
+                 alt="Illustration showing accessibility and performance optimization concepts"
+                 class="fade-in">
+        </section>
+
+        <!-- Section 2 -->
+        <section>
+            <h2>Features Implemented</h2>
+
+            <article>
+                <h3>Semantic HTML</h3>
+                <p>Proper heading hierarchy and meaningful alt text.</p>
+            </article>
+
+            <article>
+                <h3>Performance Optimizations</h3>
+                <p>Animations use transform and opacity only for better GPU acceleration.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Fixed Footer -->
+    <footer class="footer">
+        <p>© 2026 Semantic Project</p>
+    </footer>
+
+</body>
+</html>
