@@ -1,0 +1,118 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  color: #22c55e;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  border-left: 5px solid #22c55e;
+  padding-left: 10px;
+}
+
+/* -----------------------
+   CSS Pseudo-Classes
+------------------------*/
+.btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  background: #22c55e;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #16a34a;
+  color: white;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* -----------------------
+   CSS Pseudo-Elements
+------------------------*/
+.pseudo-text::before {
+  content: "👉 ";
+  color: #22c55e;
+}
+
+.pseudo-text::first-letter {
+  font-size: 30px;
+  color: #22c55e;
+}
+
+/* -----------------------
+   CSS Filters
+------------------------*/
+.filter-img {
+  width: 300px;
+  filter: grayscale(100%);
+  transition: 0.5s;
+}
+
+.filter-img:hover {
+  filter: none;
+}
+
+/* -----------------------
+   CSS Transform
+------------------------*/
+.transform-box {
+  width: 150px;
+  height: 150px;
+  background: #22c55e;
+  transition: 0.5s;
+}
+
+.transform-box:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+
+/* -----------------------
+   CSS Transitions
+------------------------*/
+.card {
+  width: 200px;
+  height: 100px;
+  background: #1e293b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s, transform 0.5s;
+}
+
+.card:hover {
+  background: #22c55e;
+  transform: translateY(-10px);
+}
+
+/* -----------------------
+   CSS Animations
+------------------------*/
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ddd;
+  border-top: 5px solid #22c55e;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
