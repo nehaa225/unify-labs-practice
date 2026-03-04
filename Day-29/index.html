@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Zenith - Blog CMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🚀 Project Zenith</h1>
+        <p>Modern Blog Management System</p>
+    </header>
+
+    <section class="form-section">
+        <h2>Create New Post</h2>
+        <form id="postForm">
+            <input type="text" id="title" placeholder="Enter Title" required>
+            <input type="text" id="author" placeholder="Enter Author Name" required>
+            <textarea id="content" placeholder="Write your content..." required></textarea>
+            <button type="submit">Publish Post</button>
+        </form>
+    </section>
+
+    <section class="blog-section">
+        <h2>All Blog Posts</h2>
+        <div id="blogContainer"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
